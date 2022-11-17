@@ -8,20 +8,20 @@ import SwiftUI
 
 class LocationViewModel: ObservableObject{
     //MARK: - VARS
-    // all loded locations
+    // All loded locations
     @Published var locations: [Location]
-    // current location on map
+    // Current location on map
     @Published var mapLocation: Location {
         didSet{
             updateMapRegion(location: mapLocation)
         }
     }
-    // current regin in map
+    // Current regin in map
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-    // show list at Location
+    // Show list at Location
     @Published var showLocationList: Bool = false
-    // init
+    // Init
     init() {
         let locations = LocationsDataService.locations
         self.locations = locations

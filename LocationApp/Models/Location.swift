@@ -19,7 +19,7 @@ struct Location: Identifiable,Equatable{
     var id: String{
         name + cityName
     }
-    //Equatable
+    //Equatable  -> for animation
     static func == (lhs: Location, rhs: Location) -> Bool {
         lhs.id == rhs.id
     }
