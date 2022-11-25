@@ -10,15 +10,16 @@ import MapKit
 
 struct LocationView: View {
     @EnvironmentObject private var locationViewModel: LocationViewModel
-//MARK: - Body
+    //MARK: - Body
     var body: some View {
         ZStack{
-            Map(coordinateRegion: $locationViewModel.mapRegion)
+            mapLayer
                 .ignoresSafeArea()
             VStack{
                 header
                     .padding()
                 Spacer()
+                locationPreviewStack
             }
         }
     }
@@ -60,5 +61,35 @@ extension LocationView{
         .cornerRadius(10)
         .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 15)
         
+    }
+    // map Layer
+    private var mapLayer: some View{
+        Map(coordinateRegion: $locationViewModel.mapRegion,
+            annotationItems: locationViewModel.locations,
+            annotationContent: { location in
+            MapAnnotation(coordinate: location.coordinates) {
+                LocationMapAnnotationView()
+                    .scaleEffect(locationViewModel.mapLocation == location ? 1 : 0.7)
+                    .shadow(radius: 10)
+                    .onTapGesture {
+                        locationViewModel.showNextLocation(location: location)
+                    }
+            }
+        })
+    }
+    // locationPreviewStack
+    private var locationPreviewStack: some View{
+        ZStack{
+            ForEach(LocationsDataService.locations) { location in
+                if locationViewModel.mapLocation == location{
+                    LocationPreviewView(location: location)
+                        .shadow(color: .black.opacity(0.3), radius: 20)
+                        .padding()
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing),
+                            removal: .move(edge: .leading)))
+                }
+            }
+        }
     }
 }

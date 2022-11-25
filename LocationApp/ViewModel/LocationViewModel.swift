@@ -49,4 +49,19 @@ class LocationViewModel: ObservableObject{
             showLocationList = false
         }
     }
+    // Next location
+    func nextButtonPressed(){
+        guard let currentIndex = locations.firstIndex(where: {$0 == mapLocation})else{
+            print("could not find current index ")
+            return
+        }
+        let nextIndex = currentIndex + 1
+        guard locations.indices.contains(nextIndex) else{
+            guard let firstLocation = locations.first else{return}
+            showNextLocation(location: firstLocation)
+            return
+        }
+        let nextLocation = locations[nextIndex]
+        showNextLocation(location: nextLocation)
+    }
 }
