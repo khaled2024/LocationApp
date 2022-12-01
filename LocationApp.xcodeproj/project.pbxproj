@@ -12,7 +12,6 @@
 		EA538E2D2938E7310081716A /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA538E2C2938E7310081716A /* LocationDetailView.swift */; };
 		EA6D78A42926B82B004F2484 /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D78A32926B82B004F2484 /* LocationListView.swift */; };
 		EA80C77029245B9600579194 /* LocationAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA80C76F29245B9600579194 /* LocationAppApp.swift */; };
-		EA80C77229245B9600579194 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA80C77129245B9600579194 /* ContentView.swift */; };
 		EA80C77729245B9B00579194 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA80C77629245B9B00579194 /* Preview Assets.xcassets */; };
 		EA80C77E29245C8400579194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA80C77D29245C8400579194 /* Assets.xcassets */; };
 		EA80C78329245CF900579194 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA80C78229245CF900579194 /* Location.swift */; };
@@ -29,7 +28,6 @@
 		EA6D78A32926B82B004F2484 /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		EA80C76C29245B9600579194 /* LocationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA80C76F29245B9600579194 /* LocationAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAppApp.swift; sourceTree = "<group>"; };
-		EA80C77129245B9600579194 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EA80C77629245B9B00579194 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA80C77D29245C8400579194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA80C78229245CF900579194 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			children = (
 				EA538E2E2938F9BD0081716A /* Info.plist */,
 				EA80C76F29245B9600579194 /* LocationAppApp.swift */,
-				EA80C77129245B9600579194 /* ContentView.swift */,
 				EA80C78629245D8F00579194 /* DataServices */,
 				EA80C78129245CE000579194 /* Views */,
 				EA80C77F29245CD300579194 /* Models */,
@@ -199,7 +196,6 @@
 				EA9CB5B529313BD8006F931E /* LocationMapAnnotationView.swift in Sources */,
 				EA5353D42924F5B300B8684A /* LocationViewModel.swift in Sources */,
 				EA9CB5B32930B332006F931E /* LocationPreviewView.swift in Sources */,
-				EA80C77229245B9600579194 /* ContentView.swift in Sources */,
 				EA5353D22924EF8A00B8684A /* LocationView.swift in Sources */,
 				EA6D78A42926B82B004F2484 /* LocationListView.swift in Sources */,
 				EA80C78329245CF900579194 /* Location.swift in Sources */,
