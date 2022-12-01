@@ -10,6 +10,7 @@ import MapKit
 
 struct LocationView: View {
     @EnvironmentObject private var locationViewModel: LocationViewModel
+    let maxWidthForIpad: CGFloat = 700
     //MARK: - Body
     var body: some View {
         ZStack{
@@ -18,9 +19,13 @@ struct LocationView: View {
             VStack{
                 header
                     .padding()
+                    .frame(maxWidth: maxWidthForIpad)
                 Spacer()
                 locationPreviewStack
             }
+        }
+        .sheet(item: $locationViewModel.sheetLocation, onDismiss: nil) { location in
+            LocationDetailView(location: location)
         }
     }
 }
@@ -31,7 +36,7 @@ struct LocationView_Previews: PreviewProvider {
             .environmentObject(LocationViewModel())
     }
 }
-//MARK: - header
+//MARK: - Header
 extension LocationView{
     private var header: some View{
         VStack {
@@ -85,6 +90,9 @@ extension LocationView{
                     LocationPreviewView(location: location)
                         .shadow(color: .black.opacity(0.3), radius: 20)
                         .padding()
+                        .frame(maxWidth: maxWidthForIpad)
+                // عملنا فرام كمان ع الترانزيشن يبدا من الحافه بتاعت الاسكرين مش من الفرام بتاع الاستاك
+                        .frame(maxWidth: .infinity)
                         .transition(.asymmetric(
                             insertion: .move(edge: .trailing),
                             removal: .move(edge: .leading)))
